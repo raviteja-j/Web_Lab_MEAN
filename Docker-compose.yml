@@ -1,0 +1,18 @@
+version: "3"
+services:
+  app:
+    container_name: docker-mean
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: raviteja11/mean_book_app
+    ports:
+      - "3000:3000"
+    links:
+      - mongodb
+  mongodb:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
