@@ -1,16 +1,22 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var vcapServices = require("vcap_services");
 var MongoClient = require("mongodb").MongoClient;
+
 var app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
-const PORT = 3000;
-const HOST = "192.168.99.100";
-app.listen(PORT);
-console.log("Sever running sat http://" + HOST + ":" + PORT);
-MongoClient.connect("mongodb://mongo/db", function (err, db) {
-  if (!err) {
-    console.log("Connected to Database");
+const PORT = 8080;
 
+app.listen(PORT);
+console.log("Sever running");
+
+let url;
+var credentials = vcapServices.getCredentials("mlab");
+url = credentials.uri;
+if (url == null) url = "mongodb://mongo:27017/mynewdb";
+MongoClient.connect(url, function (err, db) {
+  if (!err) {
+    console.log("Connected to Database", url);
     app.use(express.static(__dirname + "/public"));
     app.use(bodyParser.json());
     app.get("/", function (req, res) {
@@ -132,7 +138,5 @@ MongoClient.connect("mongodb://mongo/db", function (err, db) {
           }
         });
     });
-  } else {
-    db.close();
-  }
+  } else console.log("Failed to Connect to Database", url);
 });

@@ -34,9 +34,9 @@
         <p><input type="submit" value="Search" ng-click="Submit" /></p>
       </form>
       <div class="display">
-        <p ng-if="nums">
-          <span class="records"> <br /><br />No entry found</span>
-        </p>
+        <div ng-if="nums">
+          <div class="records">No entry found</div>
+        </div>
         <table ng-if="fill">
           <caption>
             Records

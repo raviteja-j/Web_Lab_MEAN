@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     image: raviteja11/mean_book_app
     ports:
-      - "3000:3000"
+      - "8080:8080"
     links:
       - mongodb
   mongodb:

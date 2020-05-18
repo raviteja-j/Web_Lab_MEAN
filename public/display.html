@@ -18,9 +18,9 @@
     </div>
     <div ng-app="display" ng-controller="displayController" ng-init="send()">
       <div class="display">
-        <p ng-if="nums">
-          <span class="records"> <br /><br />No entry found</span>
-        </p>
+        <div ng-if="nums">
+          <div class="records">No entry found</div>
+        </div>
         <br /><br />
         <table ng-if="fill">
           <tr>

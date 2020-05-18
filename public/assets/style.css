@@ -3,13 +3,14 @@ html {
   margin: 0;
   padding: 0;
   background-color: #4169e1;
+  background-image: url("background-book-bookcase-books.jpg");
   color: #ffffff;
 }
 
 .header {
   padding: 10px;
   text-align: center;
-  background: #dea82a;
+  background: #f7ae03;
   color: white;
   font-size: 25px;
 }
@@ -48,12 +49,6 @@ a:visited {
   color: black;
 }
 
-.nav-bar a:active,
-:target {
-  background-color: #4caf50;
-  color: white;
-}
-
 .display {
   text-align: justify;
 }
@@ -88,7 +83,9 @@ form {
   border-width: 2px;
   border-color: #000000;
   border-radius: 5px;
-  background-color: #ffffff;
+  background-color: transparent;
+  background-image: url("Top-20-Photog-Books-no-text.jpg");
+  background-size: contain;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -111,6 +108,11 @@ form {
   padding-bottom: 10px;
   margin: 10px;
   font-size: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .display td,
 .display th {
@@ -138,6 +140,7 @@ img {
 }
 
 #index {
-  font-size: 19px;
+  height: 75%;
+  background-size: cover;
   text-align: center;
 }
