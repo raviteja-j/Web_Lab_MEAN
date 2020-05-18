@@ -102,7 +102,6 @@ MongoClient.connect(url, function (err, db) {
     });
 
     app.post("/delete_post", function (req, res) {
-      console.log("hi");
       var field = req.body.option;
       var value = req.body.value;
       db.collection("books", function (err, data) {
